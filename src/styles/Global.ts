@@ -52,5 +52,6 @@ table {
 
 body {
     font-family: var(--font-family-2);
+	background-color: #020305;
 }
 `;

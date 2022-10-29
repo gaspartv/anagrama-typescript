@@ -10,6 +10,7 @@ interface iAnagramContext {
   searchAnagram: (obj: iSearchUseForm) => void;
   result: string[];
   setResult: React.Dispatch<React.SetStateAction<string[]>>;
+  normalizeString: (name: string) => string;
 }
 
 export const AnagramContext = createContext({} as iAnagramContext);
@@ -29,7 +30,9 @@ const AnagramProvider = ({ children }: iAnagramContextProps) => {
   };
 
   return (
-    <AnagramContext.Provider value={{ searchAnagram, result, setResult }}>
+    <AnagramContext.Provider
+      value={{ searchAnagram, result, setResult, normalizeString }}
+    >
       {children}
     </AnagramContext.Provider>
   );
